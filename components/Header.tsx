@@ -39,17 +39,17 @@ const Header: React.FC = () => {
             A2B<span className="text-accent"></span>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             {NAV_LINKS.map(link => <NavLink key={link.name} link={link} />)}
           </nav>
           
-          <div className="hidden md:flex items-center">
+          <div className="hidden lg:flex items-center">
              <Link to="/contact" className="bg-accent text-primary font-bold py-2 px-6 rounded-md hover:bg-accent-hover transition-all duration-300 transform hover:scale-105">
               Book a Discovery Call
             </Link>
           </div>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-light focus:outline-none">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
       </div>
       
       {isOpen && (
-        <div className="md:hidden bg-secondary">
+        <div className="lg:hidden bg-secondary">
           <div className="px-4 pt-2 pb-4 flex flex-col space-y-2">
             {NAV_LINKS.map(link => <NavLink key={link.name} link={link} onClick={() => setIsOpen(false)} />)}
             <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-accent text-primary font-bold py-3 px-6 rounded-md text-center mt-2 hover:bg-accent-hover transition-all duration-300">
