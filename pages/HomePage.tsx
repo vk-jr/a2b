@@ -13,41 +13,41 @@ const HomePage: React.FC = () => {
 
   const SectionTitle: React.FC<{ children: React.ReactNode; subtitle?: string; }> = ({ children, subtitle }) => (
       <div className="text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-light">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-light">
           {children}
         </h2>
-        {subtitle && <p className="mt-4 text-lg text-medium">{subtitle}</p>}
+        {subtitle && <p className="mt-4 text-lg text-slate-600 dark:text-medium">{subtitle}</p>}
       </div>
   );
   
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-         <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary animation-gradient-bg bg-[200%_200%] animate-gradient-bg"></div>
-         <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white dark:bg-transparent">
+         <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary animation-gradient-bg bg-[200%_200%] animate-gradient-bg hidden dark:block"></div>
+         <div className="absolute inset-0 bg-black/20 hidden dark:block"></div>
          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold tracking-tighter text-light leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold tracking-tighter text-slate-900 dark:text-light leading-tight">
                     Scale Your Business Without Increasing Headcount
                 </h1>
-                <p className="mt-6 text-lg sm:text-xl text-medium max-w-2xl mx-auto">
+                <p className="mt-6 text-lg sm:text-xl text-slate-600 dark:text-medium max-w-2xl mx-auto">
                     We are your strategic AI partner, helping you automate operations, maximize ROI, and transform your business through custom-built intelligent systems.
                 </p>
                 <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Link to="/contact" className="w-full sm:w-auto bg-accent text-primary font-bold py-3 px-8 rounded-md hover:bg-accent-hover transition-all duration-300 transform hover:scale-105">
                         Book a Discovery Call
                     </Link>
-                    <Link to="/case-studies" className="w-full sm:w-auto bg-secondary/50 text-light font-medium py-3 px-8 rounded-md hover:bg-secondary transition-all duration-300">
+                    <Link to="/case-studies" className="w-full sm:w-auto bg-slate-200 dark:bg-secondary/50 text-slate-800 dark:text-light font-medium py-3 px-8 rounded-md hover:bg-slate-300 dark:hover:bg-secondary transition-all duration-300">
                         View Case Studies
                     </Link>
                 </div>
             </div>
             <div className="mt-20 text-center">
-                <p className="text-medium tracking-wider">TRUSTED BY CATEGORY LEADERS</p>
+                <p className="text-slate-500 dark:text-medium tracking-wider">TRUSTED BY CATEGORY LEADERS</p>
                 <div className="mt-6 flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
                     {CLIENT_LOGOS.map(logo => (
-                        <img key={logo.name} src={logo.src} alt={logo.name} className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                        <img key={logo.name} src={logo.src} alt={logo.name} className="h-8 opacity-60 hover:opacity-100 transition-opacity dark:invert" />
                     ))}
                 </div>
             </div>
@@ -61,10 +61,10 @@ const HomePage: React.FC = () => {
         </SectionTitle>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SERVICES.map((service, index) => (
-                <div key={index} className="bg-secondary p-8 rounded-xl border border-gray-700/50 hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-1">
+                <div key={index} className="bg-white dark:bg-secondary p-8 rounded-xl border border-slate-200 dark:border-gray-700/50 hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-1">
                     {service.icon}
-                    <h3 className="text-xl font-bold font-display text-light">{service.name}</h3>
-                    <p className="mt-2 text-medium">{service.description}</p>
+                    <h3 className="text-xl font-bold font-display text-slate-900 dark:text-light">{service.name}</h3>
+                    <p className="mt-2 text-slate-600 dark:text-medium">{service.description}</p>
                     <Link to={service.link} className="mt-4 inline-block font-semibold text-accent hover:text-accent-hover">
                         Learn More &rarr;
                     </Link>
@@ -74,19 +74,19 @@ const HomePage: React.FC = () => {
       </Section>
       
       {/* Case Studies Section */}
-      <Section className="bg-secondary">
+      <Section className="bg-slate-50 dark:bg-secondary">
         <SectionTitle subtitle="See how we've helped businesses like yours achieve remarkable results with custom AI implementations.">
           Real Businesses. Real Automation ROI.
         </SectionTitle>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {CASE_STUDIES.map((study, index) => (
-                <div key={index} className="bg-primary rounded-lg overflow-hidden group">
+                <div key={index} className="bg-white dark:bg-primary rounded-lg overflow-hidden group shadow-md hover:shadow-xl transition-shadow duration-300">
                     <img src={study.image} alt={study.challenge} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
                     <div className="p-6">
                         <p className="text-sm font-semibold text-accent">{study.industry}</p>
-                        <h3 className="mt-2 text-lg font-bold text-light">{study.challenge}</h3>
-                        <p className="mt-2 text-medium text-sm">{study.solution}</p>
-                        <p className="mt-4 font-semibold text-light">{study.results}</p>
+                        <h3 className="mt-2 text-lg font-bold text-slate-900 dark:text-light">{study.challenge}</h3>
+                        <p className="mt-2 text-slate-600 dark:text-medium text-sm">{study.solution}</p>
+                        <p className="mt-4 font-semibold text-slate-900 dark:text-light">{study.results}</p>
                     </div>
                 </div>
             ))}
@@ -104,24 +104,24 @@ const HomePage: React.FC = () => {
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {DIFFERENTIATORS.map((item, index) => (
                 <div key={index} className="p-6">
-                    <h3 className="text-xl font-bold font-display text-light">{item.title}</h3>
-                    <p className="mt-2 text-medium">{item.description}</p>
+                    <h3 className="text-xl font-bold font-display text-slate-900 dark:text-light">{item.title}</h3>
+                    <p className="mt-2 text-slate-600 dark:text-medium">{item.description}</p>
                 </div>
             ))}
         </div>
       </Section>
 
       {/* Testimonials Section */}
-      <Section className="bg-secondary">
+      <Section className="bg-slate-50 dark:bg-secondary">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {TESTIMONIALS.map((testimonial, index) => (
-                <div key={index} className="bg-primary p-8 rounded-xl border border-gray-700/50">
-                    <p className="text-lg text-light italic">"{testimonial.quote}"</p>
+                <div key={index} className="bg-white dark:bg-primary p-8 rounded-xl border border-slate-200 dark:border-gray-700/50">
+                    <p className="text-lg text-slate-700 dark:text-light italic">"{testimonial.quote}"</p>
                     <div className="flex items-center mt-6">
                         <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full"/>
                         <div className="ml-4">
-                            <p className="font-bold text-light">{testimonial.name}</p>
-                            <p className="text-medium">{testimonial.title}, {testimonial.company}</p>
+                            <p className="font-bold text-slate-900 dark:text-light">{testimonial.name}</p>
+                            <p className="text-slate-600 dark:text-medium">{testimonial.title}, {testimonial.company}</p>
                         </div>
                     </div>
                 </div>
@@ -136,12 +136,12 @@ const HomePage: React.FC = () => {
         </SectionTitle>
         <div className="mt-16 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {PRICING_TIERS.map((tier) => (
-                <div key={tier.name} className={`rounded-xl p-8 flex flex-col ${tier.primary ? 'bg-secondary border-2 border-accent' : 'bg-secondary border border-gray-700'}`}>
+                <div key={tier.name} className={`rounded-xl p-8 flex flex-col ${tier.primary ? 'bg-slate-100 dark:bg-secondary border-2 border-accent' : 'bg-slate-100 dark:bg-secondary border border-slate-200 dark:border-gray-700'}`}>
                     {tier.label && <div className="text-center mb-4"><span className="bg-accent text-primary text-xs font-bold uppercase px-3 py-1 rounded-full">{tier.label}</span></div>}
-                    <h3 className="text-2xl font-bold font-display text-center text-light">{tier.name}</h3>
-                    <p className="text-4xl font-bold font-display text-center text-light my-4">{tier.price}</p>
-                    <p className="text-medium text-center h-16">{tier.description}</p>
-                    <ul className="mt-6 space-y-4 text-medium flex-grow">
+                    <h3 className="text-2xl font-bold font-display text-center text-slate-900 dark:text-light">{tier.name}</h3>
+                    <p className="text-4xl font-bold font-display text-center text-slate-900 dark:text-light my-4">{tier.price}</p>
+                    <p className="text-slate-600 dark:text-medium text-center h-16">{tier.description}</p>
+                    <ul className="mt-6 space-y-4 text-slate-600 dark:text-medium flex-grow">
                         {tier.features.map((feature) => (
                             <li key={feature} className="flex items-start">
                                 <svg className="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
@@ -149,7 +149,7 @@ const HomePage: React.FC = () => {
                             </li>
                         ))}
                     </ul>
-                    <Link to={tier.ctaPath} className={`w-full mt-8 text-center font-bold py-3 px-8 rounded-md transition-all duration-300 ${tier.primary ? 'bg-accent text-primary hover:bg-accent-hover' : 'bg-primary text-light hover:bg-gray-700'}`}>
+                    <Link to={tier.ctaPath} className={`w-full mt-8 text-center font-bold py-3 px-8 rounded-md transition-all duration-300 ${tier.primary ? 'bg-accent text-primary hover:bg-accent-hover' : 'bg-white dark:bg-primary text-slate-900 dark:text-light hover:bg-slate-200 dark:hover:bg-gray-700'}`}>
                         {tier.cta}
                     </Link>
                 </div>

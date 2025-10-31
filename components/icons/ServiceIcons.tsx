@@ -2,7 +2,7 @@
 import React from 'react';
 
 const IconWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4 text-accent">
+    <div className="w-12 h-12 bg-slate-100 dark:bg-secondary rounded-lg flex items-center justify-center mb-4 text-accent">
         {children}
     </div>
 );
