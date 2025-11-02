@@ -86,7 +86,7 @@ export const PRICING_TIERS: PricingTier[] = [
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [
-    { name: 'Alex Johnson', role: 'Lead AI Engineer', bio: 'Expert in machine learning models and large-scale system architecture.', image: 'https://picsum.photos/seed/team1/400/400', linkedin: '#' },
+    { name: 'Rahul V K', role: 'Lead AI Engineer', bio: 'Expert in machine learning models and large-scale system architecture.', image: 'https://picsum.photos/seed/team1/400/400', linkedin: '#' },
     { name: 'Brenda Chen', role: 'Data Scientist', bio: 'Passionate about turning complex data into actionable business intelligence.', image: 'https://picsum.photos/seed/team2/400/400', linkedin: '#' },
     { name: 'Carlos Rodriguez', role: 'Business Consultant', bio: 'Bridges the gap between technical possibilities and strategic business goals.', image: 'https://picsum.photos/seed/team3/400/400', linkedin: '#' },
     { name: 'Diana Miller', role: 'Project Manager', bio: 'Ensures seamless project execution from discovery to deployment and beyond.', image: 'https://picsum.photos/seed/team4/400/400', linkedin: '#' },
