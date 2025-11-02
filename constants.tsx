@@ -8,6 +8,7 @@ export const NAV_LINKS: NavLink[] = [
   { name: 'Home', path: '/' },
   { name: 'Solutions', path: '/solutions' },
   { name: 'Case Studies', path: '/case-studies' },
+  { name: 'Pricing', path: '/pricing' },
   { name: 'About Us', path: '/about' },
   { name: 'Resources', path: '/resources' },
   { name: 'Contact', path: '/contact' },
@@ -86,10 +87,11 @@ export const PRICING_TIERS: PricingTier[] = [
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [
-    { name: 'Rahul V K', role: 'Lead AI Engineer', bio: 'Expert in machine learning models and large-scale system architecture.', image: 'https://picsum.photos/seed/team1/400/400', linkedin: '#' },
-    { name: 'Brenda Chen', role: 'Data Scientist', bio: 'Passionate about turning complex data into actionable business intelligence.', image: 'https://picsum.photos/seed/team2/400/400', linkedin: '#' },
-    { name: 'Carlos Rodriguez', role: 'Business Consultant', bio: 'Bridges the gap between technical possibilities and strategic business goals.', image: 'https://picsum.photos/seed/team3/400/400', linkedin: '#' },
-    { name: 'Diana Miller', role: 'Project Manager', bio: 'Ensures seamless project execution from discovery to deployment and beyond.', image: 'https://picsum.photos/seed/team4/400/400', linkedin: '#' },
+    { name: 'Rahul V K', role: 'Founder & Automation Architect', bio: 'Expert in designing scalable automation solutions and large-scale system architecture.', image: 'https://picsum.photos/seed/team1/400/400', linkedin: '#' },
+    { name: 'Aman Xavier', role: 'Technical Lead & Automation Architect', bio: 'Leads our development team, specializing in complex integrations and robust workflow design.', image: 'https://picsum.photos/seed/team2/400/400', linkedin: '#' },
+    { name: 'Dany Stephan', role: 'Project Manager & Automation Architect', bio: 'Ensures seamless project delivery, aligning strategy with execution from discovery to deployment.', image: 'https://picsum.photos/seed/team3/400/400', linkedin: '#' },
+    { name: 'Akhil M S', role: 'UI/UX Designer', bio: 'Designs intuitive and powerful interfaces for our custom dashboards and automation tools.', image: 'https://picsum.photos/seed/team4/400/400', linkedin: '#' },
+    { name: 'Parthiv', role: 'Automation Architect', bio: 'A master of no-code platforms, crafting efficient and reliable automation solutions for diverse client needs.', image: 'https://picsum.photos/seed/team5/400/400', linkedin: '#' },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [

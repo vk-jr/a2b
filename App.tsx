@@ -1,4 +1,3 @@
-
 import React, { Suspense, lazy } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -12,6 +11,7 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const CaseStudiesPage = lazy(() => import('./pages/CaseStudiesPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const FaqPage = lazy(() => import('./pages/FaqPage')); // Added FAQ page route
+const PricingPage = lazy(() => import('./pages/PricingPage')); // Added Pricing page
 
 const App: React.FC = () => {
   return (
@@ -27,6 +27,7 @@ const App: React.FC = () => {
                 <Route path="/solutions" element={<ServicesPage />} />
                 <Route path="/solutions/:serviceId" element={<ServicesPage />} /> {/* Example detail view */}
                 <Route path="/case-studies" element={<CaseStudiesPage />} />
+                <Route path="/pricing" element={<PricingPage />} /> {/* Added Pricing page route */}
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/faq" element={<FaqPage />} /> {/* Added FAQ page route */}
                 {/* A placeholder for resources page */}
