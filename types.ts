@@ -1,4 +1,3 @@
-
 import type { ReactElement } from 'react';
 
 export interface NavLink {
@@ -14,11 +13,11 @@ export interface Service {
 }
 
 export interface CaseStudy {
-  industry: string;
-  challenge: string;
-  solution: string;
-  results: string;
-  image: string;
+  client: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  link: string;
 }
 
 export interface Differentiator {

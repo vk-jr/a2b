@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
@@ -13,30 +13,39 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const FaqPage = lazy(() => import('./pages/FaqPage')); // Added FAQ page route
 const PricingPage = lazy(() => import('./pages/PricingPage')); // Added Pricing page
 
+const PageLayout: React.FC = () => {
+  const location = useLocation();
+  const isCaseStudiesPage = location.pathname === '/case-studies';
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">
+        <Suspense fallback={<div className="flex justify-center items-center h-screen">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/solutions" element={<ServicesPage />} />
+            <Route path="/solutions/:serviceId" element={<ServicesPage />} /> {/* Example detail view */}
+            <Route path="/case-studies" element={<CaseStudiesPage />} />
+            <Route path="/pricing" element={<PricingPage />} /> {/* Added Pricing page route */}
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/faq" element={<FaqPage />} /> {/* Added FAQ page route */}
+            {/* A placeholder for resources page */}
+            <Route path="/resources" element={<div className="text-center p-20">Resources Page - Coming Soon</div>} />
+          </Routes>
+        </Suspense>
+      </main>
+      {!isCaseStudiesPage && <Footer />}
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   return (
     <ThemeProvider>
       <HashRouter>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow">
-            <Suspense fallback={<div className="flex justify-center items-center h-screen">Loading...</div>}>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/solutions" element={<ServicesPage />} />
-                <Route path="/solutions/:serviceId" element={<ServicesPage />} /> {/* Example detail view */}
-                <Route path="/case-studies" element={<CaseStudiesPage />} />
-                <Route path="/pricing" element={<PricingPage />} /> {/* Added Pricing page route */}
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/faq" element={<FaqPage />} /> {/* Added FAQ page route */}
-                {/* A placeholder for resources page */}
-                <Route path="/resources" element={<div className="text-center p-20">Resources Page - Coming Soon</div>} />
-              </Routes>
-            </Suspense>
-          </main>
-          <Footer />
-        </div>
+        <PageLayout />
       </HashRouter>
     </ThemeProvider>
   );

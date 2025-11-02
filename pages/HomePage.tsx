@@ -80,12 +80,19 @@ const HomePage: React.FC = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {CASE_STUDIES.map((study, index) => (
                 <div key={index} className="bg-white dark:bg-primary rounded-lg overflow-hidden group shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src={study.image} alt={study.challenge} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                    {/* FIX: Properties 'image' and 'challenge' do not exist on type 'CaseStudy'. Using a placeholder image and 'title' for alt text. */}
+                    <img src={`https://picsum.photos/seed/cs${index}/600/400`} alt={study.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
                     <div className="p-6">
-                        <p className="text-sm font-semibold text-accent">{study.industry}</p>
-                        <h3 className="mt-2 text-lg font-bold text-slate-900 dark:text-light">{study.challenge}</h3>
-                        <p className="mt-2 text-slate-600 dark:text-medium text-sm">{study.solution}</p>
-                        <p className="mt-4 font-semibold text-slate-900 dark:text-light">{study.results}</p>
+                        {/* FIX: Property 'industry' does not exist on type 'CaseStudy'. Using 'client' instead. */}
+                        <p className="text-sm font-semibold text-accent">{study.client}</p>
+                        {/* FIX: Property 'challenge' does not exist on type 'CaseStudy'. Using 'title' instead. */}
+                        <h3 className="mt-2 text-lg font-bold text-slate-900 dark:text-light">{study.title}</h3>
+                        {/* FIX: Property 'solution' does not exist on type 'CaseStudy'. Using 'description' instead. */}
+                        <p className="mt-2 text-slate-600 dark:text-medium text-sm">{study.description}</p>
+                        {/* FIX: Property 'results' does not exist on type 'CaseStudy'. Using 'link' to create a call to action. */}
+                        <a href={study.link} className="inline-block mt-4 font-semibold text-accent hover:text-accent-hover">
+                            Read More &rarr;
+                        </a>
                     </div>
                 </div>
             ))}

@@ -32,9 +32,34 @@ export const SERVICES: Service[] = [
 ];
 
 export const CASE_STUDIES: CaseStudy[] = [
-  { industry: 'E-commerce', challenge: 'High volume of customer support tickets leading to slow response times.', solution: 'Deployed a custom AI agent to handle 80% of inbound queries instantly.', results: '45% reduction in support costs, 95% customer satisfaction.', image: 'https://picsum.photos/seed/casestudy1/600/400' },
-  { industry: 'Healthcare', challenge: 'Manual data entry from patient forms was slow and error-prone.', solution: 'Implemented an intelligent data system to automate data extraction and validation.', results: '98% data accuracy, 800 hours saved per month.', image: 'https://picsum.photos/seed/casestudy2/600/400' },
-  { industry: 'Logistics', challenge: 'Inefficient routing and scheduling leading to high fuel costs.', solution: 'Developed a process optimization model to create dynamic, AI-powered routes.', results: '15% reduction in fuel costs, 20% faster delivery times.', image: 'https://picsum.photos/seed/casestudy3/600/400' },
+    {
+        client: 'Marketing Flow Studio',
+        title: 'Lead Management Automation System',
+        subtitle: 'Multi-Channel Lead Sync Workflow',
+        description: 'Custom automation flow built using n8n and Google Sheets API to capture, validate, and route leads from multiple marketing channels (web forms, emails, and ad platforms). Enabled real-time updates and instant Slack alerts for the client’s sales team.',
+        link: '#',
+    },
+    {
+        client: 'SaaS Startup (Confidential)',
+        title: 'Client Onboarding Automation',
+        subtitle: 'End-to-End No-Code Integration',
+        description: 'Developed a Zapier-based automation that connects Stripe payments, Gmail confirmations, and Notion client databases — automating customer onboarding, welcome emails, and support task creation.',
+        link: '#',
+    },
+    {
+        client: 'Retail E-commerce Brand',
+        title: 'Inventory Monitoring & Alert System',
+        subtitle: 'Smart Dashboard + Telegram Notifications',
+        description: 'Implemented Make (Integromat) workflows to track stock levels, detect shipment delays, and send real-time Telegram alerts. Improved response speed by 70% and reduced manual stock checks.',
+        link: '#',
+    },
+    {
+        client: 'HR Management Platform',
+        title: 'Employee Data Sync Automation',
+        subtitle: 'Seamless Multi-App Integration',
+        description: 'Created an API-based workflow that synchronizes employee data between HR portals, Google Workspace, and Slack — eliminating repetitive updates and improving data accuracy.',
+        link: '#',
+    },
 ];
 
 export const DIFFERENTIATORS: Differentiator[] = [
